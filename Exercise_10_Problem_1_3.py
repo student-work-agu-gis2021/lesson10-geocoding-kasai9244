@@ -40,7 +40,8 @@ print(type(geo))
 # Check that the coordinate reference system of the geocoded result is correctly defined, and **reproject the layer into JGD2011** (EPSG:6668):
 
 # YOUR CODE HERE 3 to set crs.
-
+from pyproj import CRS
+geo = geo.to_crs(CRS.from_epsg(6668))
 #TEST CODE
 # Check layer crs
 print(geo.crs)
